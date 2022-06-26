@@ -30,19 +30,6 @@ include('include/dbconnector.inc.php');
     <div class='container bootstrap snippets bootdeys' style='margin-top: 150px;'>
         <div class='row' id='user-profile'>
             <?php
-            $query = "SELECT * FROM orders WHERE {$_SESSION['id']} = userID;";
-
-            $stmt = $mysqli->prepare($query);
-
-            $stmt->execute();
-
-            $result = $stmt->get_result();
-            $count = 0;
-            foreach ($result as $value) {
-                $count++;
-            }
-
-            $result->free();
 
             $query = "SELECT * FROM users WHERE {$_SESSION['id']}=id;";
 
